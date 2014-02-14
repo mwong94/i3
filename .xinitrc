@@ -7,5 +7,5 @@ pidgin&
 xbindkeys&
 nitrogen --restore&
 # volumeicon&
-# nm-applet&
+nm-applet&
 exec i3

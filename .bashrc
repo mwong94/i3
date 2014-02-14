@@ -104,7 +104,7 @@ cyn=$(tput setaf 6)
 wht=$(tput setaf 7)
 reset=$(tput sgr0)
 
-export PS1='\[$grn\]\u\[$blk\]@\[$cyn\]\h \[$ylw\]$bat \[$pur\]\w \[$blk\]> \[$wht\]'
+export PS1='\[$red\]\u\[$wht\]@\[$grn\]\h \[$blu\]$bat \[$pur\]$PWD \[$wht\]> '
 # export PS1='\[$red\]\u\[$reset\]@\[$grn\]\h\[$reset\]:\[$blu\]\w\[$reset\] \$ '
 
 # PS1="\`echo -ne \"${TXTGRN}$USER${TXTGRY}@${TXTCYN}$HOSTNAME ${TXTYLW}$bat ${TXTPUR}$PWD\"\`${TXTWHT} > "
