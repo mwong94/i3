@@ -12,16 +12,10 @@ alias cpu="lscpu | grep \"CPU MHz\""
 alias top="top -d 1"
 alias backup="sudo rsync -aAXv /* /mnt --exclude={/home/max/Music/,/etc/fstab,/dev/*,/proc/*,/sys/*,/tmp/*,/run/*,/mnt/*,/media/*,/lost+found}"
 
-alias layout1="setxkbmap -option altwin:swap_alt_win"
-alias fnmode="sudo bash -c \"echo 2 > /sys/modules/hid_apple/parameters/fnmode\""
-
 # Screen management
-alias res="xrandr --output LVDS1 --scale 1.125x1.125 --panning 1440x900 --right-of HDMI1"
-alias res1="xrandr --output HDMI1 --scale 1.12x1.12 --panning 1792x1008 --left-of LVDS1"
-alias fixres="xrandr --output LVDS1 --scale 1x1 --panning 1280x800 --right-of HDMI1"
-alias fixres1="xrandr --output HDMI1 --scale 1x1 --panning 1600x900 --left-of LVDS1"
+alias res="xrandr --output LVDS1 --scale 1.125x1.125 --panning 1152x675"
+alias fixres="xrandr --output LVDS1 --auto"
 alias screenoff="xrandr --output LVDS1 --off"
-alias screen1off="xrandr --output HDMI1 --off"
 
 
 #TEXT COLORS
@@ -91,9 +85,9 @@ function myprompt {
 	# echo -ne "${TXTGRN}$USER${TXTGRY}@${TXTCYN}$HOSTNAME ${TXTYLW}$bat ${TXTPUR}$PWD ${TXTGRY}>"
 }
  
-# PROMPT_COMMAND='myprompt'
+PROMPT_COMMAND='myprompt'
 
-bat=`acpi | cut -d' ' -f4 | cut -d',' -f1`
+# bat=`acpi | cut -d' ' -f4 | cut -d',' -f1`
 blk=$(tput setaf 0)
 red=$(tput setaf 1)
 grn=$(tput setaf 2)
@@ -102,9 +96,10 @@ blu=$(tput setaf 4)
 pur=$(tput setaf 5)
 cyn=$(tput setaf 6)
 wht=$(tput setaf 7)
+gry=$(tput dim 7)
 reset=$(tput sgr0)
 
-export PS1='\[$red\]\u\[$wht\]@\[$grn\]\h \[$blu\]$bat \[$pur\]$PWD \[$wht\]> '
+export PS1='\[$red\]\u\[$wht\]@\[$grn\]\h \[$cyn\]$bat \[$pur\]\w \[$reset\]\! > '
 # export PS1='\[$red\]\u\[$reset\]@\[$grn\]\h\[$reset\]:\[$blu\]\w\[$reset\] \$ '
 
 # PS1="\`echo -ne \"${TXTGRN}$USER${TXTGRY}@${TXTCYN}$HOSTNAME ${TXTYLW}$bat ${TXTPUR}$PWD\"\`${TXTWHT} > "
