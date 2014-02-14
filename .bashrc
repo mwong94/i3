@@ -99,7 +99,7 @@ wht=$(tput setaf 7)
 gry=$(tput dim 7)
 reset=$(tput sgr0)
 
-export PS1='\[$red\]\u\[$wht\]@\[$grn\]\h \[$cyn\]$bat \[$pur\]$PWD \[$reset\]\! > '
+export PS1='\[$red\]\u\[$blk\]@\[$grn\]\h \[$cyn\]$bat \[$pur\]$PWD \[$reset\]\! > '
 # export PS1='\[$red\]\u\[$reset\]@\[$grn\]\h\[$reset\]:\[$blu\]\w\[$reset\] \$ '
 
 # PS1="\`echo -ne \"${TXTGRN}$USER${TXTGRY}@${TXTCYN}$HOSTNAME ${TXTYLW}$bat ${TXTPUR}$PWD\"\`${TXTWHT} > "
