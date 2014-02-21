@@ -5,7 +5,7 @@ xbacklight -set 70
 xfce4-power-manager&
 pidgin&
 xbindkeys&
-nitrogen --restore&
+# nitrogen --restore&
 # volumeicon&
 nm-applet&
 exec i3

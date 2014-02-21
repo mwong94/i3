@@ -4,11 +4,14 @@
 "terminator"
 	Mod4+Return
 
-"firefox-aurora"
+"google-chrome-unstable"
 	Shift+Mod4+Return
 
 "dmenu_run"
 	Mod4+d
+
+"dmenu_run"
+	release+Mod4+space
 
 "echo -e $(zenity --password --title=pm-suspend) | sudo -S pm-suspend"
 	Shift+Mod4+s
@@ -30,8 +33,6 @@
 
 "xdotool key --window `xdotool getactivewindow` --clearmodifiers Down Down"
 	Mod4+n
-
-# cmus bindings
 
 "cmus-remote -u"
 	F5

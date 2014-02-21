@@ -11,12 +11,9 @@ alias rb="sudo reboot"
 alias cpu="lscpu | grep \"CPU MHz\""
 alias top="top -d 1"
 alias backup="sudo rsync -aAXv /* /mnt --exclude={/home/max/Music/,/etc/fstab,/dev/*,/proc/*,/sys/*,/tmp/*,/run/*,/mnt/*,/media/*,/lost+found}"
+alias tv="sudo teamviewer --daemon start"
 
-# Screen management
-alias res="xrandr --output LVDS1 --scale 1.125x1.125 --panning 1152x675"
-alias fixres="xrandr --output LVDS1 --auto"
-alias screenoff="xrandr --output LVDS1 --off"
-
+alias layout="setxkbmap -option altwin:swap_alt_win"
 
 #TEXT COLORS
 ################################################################################
@@ -111,4 +108,5 @@ export LSCOLORS='exfxxxxxxxxxxxxxxxexex'
 export PATH=".:/home/max/bin:/usr/local/bin/komodo/bin:$PATH"
 export EDITOR="vim"
 
-set history = 100000
+export HISTFILESIZE=99999
+
