@@ -1,0 +1,22 @@
+#!/bin/bash
+current=`cat /sys/class/leds/smc::kbd_backlight/brightness`
+count=0
+if [ -z $1 ]; then
+	echo $current
+elif [ $1 -eq 0 ]; then
+	sudo bash -c 'echo 0 > /sys/class/leds/smc::kbd_backlight/brightness'
+elif [ $1 -gt 0 ]; then
+	while [ $count -lt $1 ]; do
+		sudo bash -c 'temp=`cat /sys/class/leds/smc::kbd_backlight/brightness`;
+			temp=$((temp+10));
+			echo $temp > /sys/class/leds/smc::kbd_backlight/brightness'
+		count=$((count+10))
+	done
+else
+	while [ $count -gt $1 ]; do
+		sudo bash -c 'temp=`cat /sys/class/leds/smc::kbd_backlight/brightness`;
+			temp=$((temp-10));
+			echo $temp > /sys/class/leds/smc::kbd_backlight/brightness'
+		count=$((count-10))
+	done
+fi

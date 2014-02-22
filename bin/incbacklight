@@ -1,0 +1,9 @@
+#!/bin/bash
+brightness=`xbacklight -d :0.0 | cut -f 1 -d '.'`
+if [ $brightness -lt 13 ]; then
+	xbacklight -set 14
+else
+	echo "executing else"
+	xbacklight -inc 7
+fi
+

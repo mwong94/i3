@@ -1,0 +1,25 @@
+#!/bin/bash
+temp=`sensors | grep 'Physical id' | tr -s ' ' | cut -f 4 -d ' ' | cut -f 2 -d '+' | cut -f 1 -d '.'`
+adjusted=0
+if [ "$temp" -gt "84" ] ; then
+    adjusted=1
+    echo 6200 > /sys/devices/platform/applesmc.768/fan1_min
+else
+    if [ "$temp" -gt "74" ] ; then
+        adjusted=1
+        echo 5000 > /sys/devices/platform/applesmc.768/fan1_min
+    else
+        if [ "$temp" -gt "64" ] ; then
+            adjusted=1
+            echo 4000 > /sys/devices/platform/applesmc.768/fan1_min
+        else
+            if [ "$temp" -gt "54" ] ; then
+                adjusted=1
+                echo 3000 > /sys/devices/platform/applesmc.768/fan1_min
+            fi
+        fi
+    fi
+fi
+if [ "$adjusted" = "0" ] ; then
+    echo 2000 > /sys/devices/platform/applesmc.768/fan1_min
+fi

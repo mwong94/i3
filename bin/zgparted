@@ -1,0 +1,3 @@
+#!/bin/bash
+pw=`zenity --password --title="gparted"`
+echo $pw | sudo -S gparted

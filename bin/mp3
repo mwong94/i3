@@ -1,0 +1,7 @@
+#!/bin/bash
+for mp3 in $@; do
+	fname=`echo $mp3 | cut -d'.' -f1`.mp3
+	ffmpeg -i "$mp3" -b:a 320k "$fname" -v 0 &
+done
+
+while [ 1 ]; do fg 2> /dev/null; [ $? == 1 ] && break; done

@@ -1,0 +1,3 @@
+#!/bin/bash
+win=$(xdotool getactivewindow)
+xdotool key --window $win --clearmodifiers Down Down
