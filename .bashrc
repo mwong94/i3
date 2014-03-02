@@ -12,8 +12,15 @@ alias cpu="lscpu | grep \"CPU MHz\""
 alias top="top -d 1"
 alias backup="sudo rsync -aAXv /* /mnt --exclude={/home/max/Music/,/etc/fstab,/dev/*,/proc/*,/sys/*,/tmp/*,/run/*,/mnt/*,/media/*,/lost+found}"
 alias tv="sudo teamviewer --daemon start"
+alias t="trash-put"
+alias backlight="sudo bash -c \"echo 700 > /sys/class/backlight/intel_backlight/brightness\""
 
 alias layout="setxkbmap -option altwin:swap_alt_win"
+
+alias screenoff="xrandr --output LVDS1 --off"
+alias fixres="xrandr --output LVDS1 --auto --right-of HDMI1"
+alias screen1off="xrandr --output HDMI1 --off"
+alias fixres1="xrandr --output HDMI1 --auto --left-of LVDS1"
 
 #TEXT COLORS
 ################################################################################
@@ -96,7 +103,7 @@ wht=$(tput setaf 7)
 gry=$(tput dim 7)
 reset=$(tput sgr0)
 
-export PS1='\[$red\]\u\[$blk\]@\[$grn\]\h \[$cyn\]$bat \[$pur\]$PWD \[$reset\]\! > '
+export PS1='\[$red\]\u\[$reset\]@\[$grn\]\h \[$cyn\]$bat \[$pur\]$PWD \[$reset\]\! > '
 # export PS1='\[$red\]\u\[$reset\]@\[$grn\]\h\[$reset\]:\[$blu\]\w\[$reset\] \$ '
 
 # PS1="\`echo -ne \"${TXTGRN}$USER${TXTGRY}@${TXTCYN}$HOSTNAME ${TXTYLW}$bat ${TXTPUR}$PWD\"\`${TXTWHT} > "
@@ -108,5 +115,5 @@ export LSCOLORS='exfxxxxxxxxxxxxxxxexex'
 export PATH=".:/home/max/bin:/usr/local/bin/komodo/bin:$PATH"
 export EDITOR="vim"
 
-export HISTFILESIZE=99999
+export HISTFILESIZE=500
 
