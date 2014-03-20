@@ -17,6 +17,8 @@ alias backlight="sudo bash -c \"echo 700 > /sys/class/backlight/intel_backlight/
 
 alias layout="setxkbmap -option altwin:swap_alt_win"
 
+alias m="/media/data/matlab/bin/matlab -nosplash -nodesktop"
+
 alias screenoff="xrandr --output LVDS1 --off"
 alias fixres="xrandr --output LVDS1 --auto --right-of HDMI1"
 alias screen1off="xrandr --output HDMI1 --off"
@@ -112,7 +114,7 @@ export PS1='\[$red\]\u\[$reset\]@\[$grn\]\h \[$cyn\]$bat \[$pur\]$PWD \[$reset\]
 
 # export PS1="\u \w \# > "
 export LSCOLORS='exfxxxxxxxxxxxxxxxexex'
-export PATH=".:/home/max/bin:/usr/local/bin/komodo/bin:$PATH"
+export PATH=".:/home/max/bin:/media/data/matlab/bin:/bin:$PATH"
 export EDITOR="vim"
 
 export HISTFILESIZE=500

@@ -1,3 +1,4 @@
 #!/bin/bash
 dmesg -n 1
+echo 2 > /sys/module/hid_apple/parameters/fnmode
 exit 0

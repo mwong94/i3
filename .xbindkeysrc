@@ -7,7 +7,7 @@
 "terminator"
 	Mod4+Return
 
-"google-chrome-unstable"
+"google-chrome-stable"
 	Shift+Mod4+Return
 
 "thunar"
@@ -15,6 +15,9 @@
 
 "dmenu -i -p " " -sb '#d64937' < ~/.cache/dmenu_run | /bin/sh &"
 	Mod4+d
+
+"dmenu_run"
+	Mod4+Shift+d
 
 "echo -e $(zenity --password --title=pm-suspend) | sudo -S pm-suspend"
 	Shift+Mod4+s
